@@ -1,0 +1,82 @@
+---
+title: "fec16 - An R Package Containing Relational Data From The U.S. 2016 Elections"
+author: 
+  - name: Marium A. Tapal (Presenter)
+    main: true
+  - name: Benjamin S. Baumer
+    main: true
+  - name: Irene Ryan
+    main: true
+  - name: Rana Gahwagy
+    main: true
+affiliation:
+  - address: "**Statistical and Data Sciences, Smith College**"
+poster_height: "20.5in"
+poster_width: "36.5in"
+title_textsize: "97px"
+body_textsize: "32px"
+main: true
+main_findings: 
+  - "**Teach** and **Learn** Statistics and Data Science using **real** data from the 2016 U.S. elections"
+  - "All data is **relational** for easy joins!"
+  - "![](hex_fec16.png){.main_pic}"
+main_textsize: "80px"
+main_width: 0.3
+primary_colour: "#002868"
+secondary_colour: "#002868"
+accent_colour: "#BF0A30"
+author_textsize: "1.2em"
+affiliation_textsize:	"1.2em"
+column_padding: "10mm"
+output: 
+  posterdown::posterdown_betterland:
+    self_contained: false
+    pandoc_args: --mathjax
+    highlight: espresso
+    number_sections: false
+---
+
+<img src="logo_sds.png" style="position:absolute;top:320px;left:800px;"/>
+
+# Introduction
+
+`fec16` is a data package for use in the programming language R. It contains cleaned relational data from the 2015-2016 United States federal election cycle, hosted by the Federal Election Commission (FEC). 
+
+The data includes authoritative information about candidates, committees, contributions, expenditures, and election results. Most datasets are included in full, while a small sample of the others is available with the option of retrieving the entire datasets through built-in functions. 
+
+This package is useful as there exists a demand for such data in teaching. `fec16` is a one-stop-shop for interesting and clean data suitable for introductory statistics and data science students. 
+
+# Objectives
+
+1. Easy access to the data
+2. Relational data suitable for teaching and learning
+3. Data is pre-cleaned and wrangled 
+
+# Why `fec16`?
+
+There is always demand for quality data that is both open source and easy to access in the teaching of introductory statistics and data science. Therefore we created `fec16` that provides real data in a genre not seen often. Election data is diverse: it contains important financial and geopolitical information among other sub-categories. This genre is especially relevant as we near the 2020 U.S presidential elections in early November.
+
+# Datasets Included
+
+```{r echo=FALSE, message=FALSE}
+library(tidyverse)
+datasets <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSinV4oy98YdPhZqbT0OO84I6kaADgiYrGAvk4jFuo3x-Dg6Qr7s-BcmeE3l1rjD-00coMg27lUqO27/pub?gid=0&single=true&output=csv")
+datasets %>%
+  knitr::kable(align = c("l", "c", "l"), "html")
+```
+
+For the datasets that are included as samples, the package includes functions called `read_all_*()`, where \* is the name of the dataset, that reads in the full dataset.
+
+# Learn More
+
+### CRAN
+
+`fec16` is hosted on the Comprehensive R Archive Network (CRAN). You can install it by running `install.packages("fec16")`. 
+
+### GitHub Repository
+
+The development version can be found on GitHub at [https://github.com/baumer-lab/fec16](https://github.com/baumer-lab/fec16) or scan the following QR code:
+
+```{r echo=FALSE, out.width='37%', out.height='37%', fig.align='center'}
+knitr::include_graphics("github.png")
+```
