@@ -41,7 +41,7 @@ Mac: option + -
 
 Windows/Linux: alt + -
 
-## 4. Find in Files
+## 6. Find in Files
 
 Mac: cmd + shift + F
 
