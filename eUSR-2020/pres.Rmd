@@ -1,0 +1,182 @@
+---
+title: "![](hex_fec16.png){width=10%} fec16"
+subtitle: "An R Package Containing Relational Data From The U.S. 2016 Elections"
+author: |
+  Marium A. Tapal<br/>
+  <span style = 'font-size: 70%;'>
+  Co-authors: Benjamin S. Baumer, Irene Ryan, Rana Gahwagy<br/>
+  [Statistical & Data Sciences, Smith College](http://www.smith.edu/sds)
+  </span>
+date: "eUSR 2020"
+output:
+  sds::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    seal: false
+---
+class: middle, center, inverse
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE}
+# sds::duo_smith()
+sds::mono_light_smith()
+```
+
+```{css echo=FALSE}
+.my-logo-right {
+content: "";
+    position: absolute;
+    top: 15px;
+    right:  40px;
+    height: 200px;
+    width: 120px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(logo_sds.png);
+}
+.my-logo-left {
+content: "";
+    position: absolute;
+    top: 15px;
+    left:   40px;
+    height: 150px;
+    width: 103px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(r_hex_fec16-2.png);
+}
+```
+
+<div class="my-logo-right"></div> 
+
+<div class="my-logo-left"></div>
+
+# fec16
+
+## An R Package Containing Relational Data From The U.S. 2016 Elections
+
+### Marium A. Tapal
+
+#### Co-authors: Benjamin S. Baumer, Irene Ryan, Rana Gahwagy
+
+###  [Statistical & Data Sciences, Smith College](http://www.smith.edu/sds)
+
+### eUSR 2020
+---
+
+class: top
+
+## What is `fec16`?
+- a data package for use in programming language R
+- contains cleaned relational data
+- from the 2015-2016 United States federal election cycle
+
+## What data does it contain?
+- authoritative information about candidates, committees, contributions, expenditures, election results
+
+## How is the data included?
+- most datasets are included in full
+- small samples of some datasets  
+- retrieving the entire datasets is easy through built-in functions
+
+---
+.pull-left[
+
+# Main Objectives
+
+- Easy access to the data
+- Relational data suitable for teaching and learning
+- Data is pre-cleaned and wrangled 
+
+## Other Reasons
+
+- open source nature
+- real data in a genre not seen often
+- diversity of election data
+
+]
+
+.pull-right[
+
+> <font size="6"> Teach and Learn Statistics and Data Science using real data from the 2016 U.S. elections. All data is relational for easy joins!</font>
+
+]
+
+---
+
+# Datasets Included 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readr)
+library(magrittr)
+datasets <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSinV4oy98YdPhZqbT0OO84I6kaADgiYrGAvk4jFuo3x-Dg6Qr7s-BcmeE3l1rjD-00coMg27lUqO27/pub?gid=0&single=true&output=csv")
+datasets %>%
+  knitr::kable(align = c("l", "c", "l"), "html") %>% 
+  kableExtra::kable_styling(font_size = 16)
+```
+
+---
+# Functions Included
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readr)
+library(magrittr)
+functions <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSinV4oy98YdPhZqbT0OO84I6kaADgiYrGAvk4jFuo3x-Dg6Qr7s-BcmeE3l1rjD-00coMg27lUqO27/pub?gid=982272797&single=true&output=csv")
+functions %>%
+  knitr::kable(align = c("l", "l"), "html") %>% 
+  kableExtra::kable_styling(font_size = 16)
+```
+
+The functions are called `read_all_*()`, where \* is the name of the dataset
+
+---
+# Install `fec16`
+
+```{r eval=FALSE}
+install.packages("fec16")
+```
+
+--
+
+# Load `fec16`
+
+```{r}
+library(fec16)
+```
+
+---
+
+# Example
+
+```{r}
+head(candidates)
+```
+
+--
+
+```{r eval=FALSE}
+all_contributions <- read_all_contributions()
+```
+
+---
+# Learn More
+
+The development version can be found on GitHub at [https://github.com/baumer-lab/fec16](https://github.com/baumer-lab/fec16) or scan the following QR code:
+
+```{r echo=FALSE, out.width='37%', out.height='37%', fig.align='center'}
+knitr::include_graphics("github.png")
+```
+
+---
+class: center, middle
+# Thank you!
+
+`r icon::fa("envelope")` [mtapal@smith.edu](mailto:mtapal@smith.edu) |
+`r icon::fa("github")` [mariumtapal](http://www.github.com/mariumtapal) |
+`r icon::fa("twitter")` [mariumtapal](http://www.twitter.com/mariumtapal)

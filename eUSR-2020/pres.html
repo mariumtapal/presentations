@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title> fec16</title>
+    <meta charset="utf-8" />
+    <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+    <script src="libs/anchor-sections/anchor-sections.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle, center, inverse
+
+
+
+
+&lt;style type="text/css"&gt;
+.my-logo-right {
+content: "";
+    position: absolute;
+    top: 15px;
+    right:  40px;
+    height: 200px;
+    width: 120px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(logo_sds.png);
+}
+.my-logo-left {
+content: "";
+    position: absolute;
+    top: 15px;
+    left:   40px;
+    height: 150px;
+    width: 103px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(r_hex_fec16-2.png);
+}
+&lt;/style&gt;
+
+&lt;div class="my-logo-right"&gt;&lt;/div&gt; 
+
+&lt;div class="my-logo-left"&gt;&lt;/div&gt;
+
+# fec16
+
+## An R Package Containing Relational Data From The U.S. 2016 Elections
+
+### Marium A. Tapal
+
+#### Co-authors: Benjamin S. Baumer, Irene Ryan, Rana Gahwagy
+
+###  [Statistical &amp; Data Sciences, Smith College](http://www.smith.edu/sds)
+
+### eUSR 2020
+---
+
+class: top
+
+## What is `fec16`?
+- a data package for use in programming language R
+- contains cleaned relational data
+- from the 2015-2016 United States federal election cycle
+
+## What data does it contain?
+- authoritative information about candidates, committees, contributions, expenditures, election results
+
+## How is the data included?
+- most datasets are included in full
+- small samples of some datasets  
+- retrieving the entire datasets is easy through built-in functions
+
+---
+.pull-left[
+
+# Main Objectives
+
+- Easy access to the data
+- Relational data suitable for teaching and learning
+- Data is pre-cleaned and wrangled 
+
+## Other Reasons
+
+- open source nature
+- real data in a genre not seen often
+- diversity of election data
+
+]
+
+.pull-right[
+
+&gt; &lt;font size="6"&gt; Teach and Learn Statistics and Data Science using real data from the 2016 U.S. elections. All data is relational for easy joins!&lt;/font&gt;
+
+]
+
+---
+
+# Datasets Included 
+
+&lt;table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Dataset Name &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Full or Sample? &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Description &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; candidates &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Full &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; candidates registered with the FEC during the 2016 election cycle &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; committees &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Full &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; committees registered with the FEC during the 2016 election cycle &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; campaigns &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Full &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; House/Senate current campaigns &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; results_house &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Full &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; House results of the 2016 general election &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; results_senate &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Full &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Senate results of the 2016 general election &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; results_president &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Full &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; final results of the 2016 general election &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; pac &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Full &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Political Action Committee (PAC) and party summary financial information &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; individuals &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Sample &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; individual contributions to candidates/committees during the 2016 election cycle &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; contributions &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Sample &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; candidates and their contributions from committees during the 2016 election cycle &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; expenditures &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Sample &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; operating expenditures &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; transactions &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Sample &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; transactions between committees &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+# Functions Included
+
+&lt;table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Dataset Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Function Name &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; individuals &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_all_individuals() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; contributions &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_all_contributions() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; expenditures &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_all_expenditures() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; transactions &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_all_transactions() &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+The functions are called `read_all_*()`, where \* is the name of the dataset
+
+---
+# Install `fec16`
+
+
+```r
+install.packages("fec16")
+```
+
+--
+
+# Load `fec16`
+
+
+```r
+library(fec16)
+```
+
+---
+
+# Example
+
+
+```r
+head(candidates)
+```
+
+```
+## # A tibble: 6 x 15
+##   cand_id cand_name cand_pty_affili… cand_election_yr cand_office_st cand_office
+##   &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;                       &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      
+## 1 H0AL02… ROBY, MA… REP                          2016 AL             H          
+## 2 H0AL02… JOHN, RO… IND                          2016 AL             H          
+## 3 H0AL05… BROOKS, … REP                          2016 AL             H          
+## 4 H0AL07… SEWELL, … DEM                          2016 AL             H          
+## 5 H0AR01… CRAWFORD… REP                          2016 AR             H          
+## 6 H0AR03… WOMACK, … REP                          2016 AR             H          
+## # … with 9 more variables: cand_office_district &lt;chr&gt;, cand_ici &lt;chr&gt;,
+## #   cand_status &lt;chr&gt;, cand_pcc &lt;chr&gt;, cand_st1 &lt;chr&gt;, cand_st2 &lt;chr&gt;,
+## #   cand_city &lt;chr&gt;, cand_st &lt;chr&gt;, cand_zip &lt;chr&gt;
+```
+
+--
+
+
+```r
+all_contributions &lt;- read_all_contributions()
+```
+
+---
+# Learn More
+
+The development version can be found on GitHub at [https://github.com/baumer-lab/fec16](https://github.com/baumer-lab/fec16) or scan the following QR code:
+
+&lt;img src="github.png" width="37%" height="37%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center, middle
+# Thank you!
+
+<i class="fas  fa-envelope "></i> [mtapal@smith.edu](mailto:mtapal@smith.edu) |
+<i class="fab  fa-github "></i> [mariumtapal](http://www.github.com/mariumtapal) |
+<i class="fab  fa-twitter "></i> [mariumtapal](http://www.twitter.com/mariumtapal)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="/Library/Frameworks/R.framework/Versions/4.0/Resources/library/sds/rmarkdown/templates/xaringan/resources/macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

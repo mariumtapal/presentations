@@ -1,0 +1,102 @@
+---
+title: "R Markdown Keyboard Shortcuts!"
+author: "Marium Tapal"
+date: "27/10/2020"
+output: html_document
+---
+
+## 1. Insert new code chunk
+
+Mac: option + cmd + I
+
+Windows/Linux: 
+
+## 2. Insert pipe operator (%>%)
+
+## 3. Run current code (line)
+
+Mac: cmd + return
+
+```{r eval=FALSE}
+# example
+library(nycflights13)
+head(flights)
+```
+
+## 4. Knit document
+
+Mac: Cmd+Shift+K
+
+Windows/Linux: Ctrl+Shift+K
+
+## 5. Insert assignment operator
+
+Mac: Option + -
+
+```{r}
+
+```
+
+Windows/Linux: Alt + -
+
+## 4. Find in Files
+
+Mac: cmd + shift + F
+
+Windows/Linux:
+
+## Other non-markdown specific but useful
+
+### Find 
+
+Mac: cmd + F
+
+Windows/Linux: ctrl + F
+
+### Zoom in 
+
+Mac: cmd + +
+
+Windows/Linux: ctrl + +
+
+### Zoom out
+
+Mac: cmd + -
+
+Windows/Linux: ctrl + -
+
+### Undo
+
+Mac: cmd + Z
+
+Windows/Linux: ctrl + Z
+
+### Cut
+
+Mac: cmd + X
+
+Windows/Linux: ctrl + X
+
+### Copy
+
+Mac: cmd + C
+
+Windows/Linux: ctrl + C
+
+### Paste
+
+Mac: cmd + V
+
+Windows/Linux: ctrl + V
+
+### Save
+
+Mac: cmd + S
+
+Windows/Linux: ctrl + S
+
+... and more
+
+# Find a more extensive list:
+
+In RStudio, go to the **Tools** menu and then **Keyboard Shortcuts Help** or visit this [link](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts).
