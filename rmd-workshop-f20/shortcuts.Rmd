@@ -9,13 +9,19 @@ output: html_document
 
 Mac: option + cmd + I
 
-Windows/Linux: 
+Windows/Linux: ctrl + alt + I
 
 ## 2. Insert pipe operator (%>%)
 
+Mac: cmd + shift + M
+
+Windows/Linux: ctrl + shift + M
+
 ## 3. Run current code (line)
 
-Mac: cmd + return
+Mac: cmd + return/enter
+
+Linux: ctrl + enter
 
 ```{r eval=FALSE}
 # example
@@ -25,25 +31,21 @@ head(flights)
 
 ## 4. Knit document
 
-Mac: Cmd+Shift+K
+Mac: cmd + shift + K
 
-Windows/Linux: Ctrl+Shift+K
+Windows/Linux: ctrl + shift + K
 
 ## 5. Insert assignment operator
 
-Mac: Option + -
+Mac: option + -
 
-```{r}
-
-```
-
-Windows/Linux: Alt + -
+Windows/Linux: alt + -
 
 ## 4. Find in Files
 
 Mac: cmd + shift + F
 
-Windows/Linux:
+Windows/Linux: ctrl + shift + F
 
 ## Other non-markdown specific but useful
 
