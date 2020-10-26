@@ -1,9 +1,24 @@
 ---
-title: "R Markdown Keyboard Shortcuts!"
-author: "Marium Tapal"
+title: "R Markdown Keyboard Shortcuts"
+author: Marium  Tapal
 date: "27/10/2020"
-output: html_document
+output:
+  sds::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 ---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE}
+# sds::duo_smith()
+sds::mono_light_smith()
+```
 
 ## 1. Insert new code chunk
 
@@ -11,11 +26,15 @@ Mac: option + cmd + I
 
 Windows/Linux: ctrl + alt + I
 
+---
+
 ## 2. Insert pipe operator (%>%)
 
 Mac: cmd + shift + M
 
 Windows/Linux: ctrl + shift + M
+
+---
 
 ## 3. Run current line of code
 
@@ -29,11 +48,15 @@ library(nycflights13)
 head(flights)
 ```
 
+---
+
 ## 4. Knit document
 
 Mac: cmd + shift + K
 
 Windows/Linux: ctrl + shift + K
+
+---
 
 ## 5. Insert assignment operator
 
@@ -41,11 +64,15 @@ Mac: option + -
 
 Windows/Linux: alt + -
 
+---
+
 ## 6. Find in Files
 
 Mac: cmd + shift + F
 
 Windows/Linux: ctrl + shift + F
+
+---
 
 ## 7. Fix indents 
 
@@ -60,8 +87,10 @@ filter(x == 0) %>%
 count()  
 ```
 
-## Other non-markdown specific but useful
+---
 
+## Other non-markdown specific but useful
+---
 ### Find 
 
 Mac: cmd + F
@@ -80,6 +109,7 @@ Mac: cmd + -
 
 Windows/Linux: ctrl + -
 
+---
 ### Undo
 
 Mac: cmd + Z
@@ -97,7 +127,7 @@ Windows/Linux: ctrl + X
 Mac: cmd + C
 
 Windows/Linux: ctrl + C
-
+---
 ### Paste
 
 Mac: cmd + V
@@ -111,7 +141,7 @@ Mac: cmd + S
 Windows/Linux: ctrl + S
 
 ... and more
-
+---
 ## Styler package
 
 Contains add-ins to format code nicely!
@@ -128,15 +158,16 @@ Restart R and you'll find the options under Addins! I use style selection the mo
 df %>% filter(x == 0) %>% count()
 ```
 
+---
 
 ## Find a more extensive list of shortcuts
 
 In RStudio, go to the **Tools** menu and then **Keyboard Shortcuts Help** or visit this [link](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts).
-
+---
 ## Modify keyboard shortcuts
 
 In RStudio, go to the **Tools** menu and then **Modify Keyboard Shortcuts**.
-
+---
 ## Create your own shortcut
 
 You can create your own shortcuts but it is complicated. [Here](https://www.r-bloggers.com/2020/03/defining-your-own-shortcut-in-rstudio/) is a nice blospost about it!
