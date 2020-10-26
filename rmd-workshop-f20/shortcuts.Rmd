@@ -17,13 +17,13 @@ Mac: cmd + shift + M
 
 Windows/Linux: ctrl + shift + M
 
-## 3. Run current code (line)
+## 3. Run current line of code
 
 Mac: cmd + return/enter
 
 Linux: ctrl + enter
 
-```{r eval=FALSE}
+```{r eval=FALSE, echo=FALSE}
 # example
 library(nycflights13)
 head(flights)
@@ -46,6 +46,19 @@ Windows/Linux: alt + -
 Mac: cmd + shift + F
 
 Windows/Linux: ctrl + shift + F
+
+## 7. Fix indents 
+
+Mac: cmd + I
+
+Windown/Linux: ctrl + I
+
+```{r eval=FALSE, echo=FALSE}
+# Example
+df %>% 
+filter(x == 0) %>% 
+count()  
+```
 
 ## Other non-markdown specific but useful
 
@@ -99,6 +112,31 @@ Windows/Linux: ctrl + S
 
 ... and more
 
-# Find a more extensive list:
+## Styler package
+
+Contains add-ins to format code nicely!
+
+```{r eval=FALSE}
+# how to install
+install.packages("styler")
+```
+
+Restart R and you'll find the options under Addins! I use style selection the most.
+
+```{r eval=FALSE, echo=FALSE}
+# Example
+df %>% filter(x == 0) %>% count()
+```
+
+
+## Find a more extensive list of shortcuts
 
 In RStudio, go to the **Tools** menu and then **Keyboard Shortcuts Help** or visit this [link](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts).
+
+## Modify keyboard shortcuts
+
+In RStudio, go to the **Tools** menu and then **Modify Keyboard Shortcuts**.
+
+## Create your own shortcut
+
+You can create your own shortcuts but it is complicated. [Here](https://www.r-bloggers.com/2020/03/defining-your-own-shortcut-in-rstudio/) is a nice blospost about it!
