@@ -56,8 +56,21 @@ Windown/Linux: ctrl + I
 ```{r eval=FALSE, echo=FALSE}
 # Example
 df %>% 
-filter(x == 0) %>% 
-count()  
+  filter(x == 0) %>% 
+  count()  
+```
+
+## 8. Comment (and uncomment) out code
+
+Mac: cmd + shift + C
+
+Windown/Linux: ctrl + shift + C
+
+```{r eval=FALSE, echo=FALSE}
+# Example
+df %>% 
+  filter(x == 0) %>% 
+  count()  
 ```
 
 ## Other non-markdown specific but useful
@@ -125,7 +138,9 @@ Restart R and you'll find the options under Addins! I use style selection the mo
 
 ```{r eval=FALSE, echo=FALSE}
 # Example
-df %>% filter(x == 0) %>% count()
+df %>%
+  filter(x == 0) %>%
+  count()
 ```
 
 
